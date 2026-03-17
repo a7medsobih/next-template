@@ -1,9 +1,9 @@
 // app/[locale]/layout.js
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import LanguageSwitcher from "../components/LanguageSwitcher";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { use } from 'react';
-import "../styles/globals.css";
+import "@/styles/globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
