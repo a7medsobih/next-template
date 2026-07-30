@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next Template
 
-## Getting Started
+---
 
-First, run the development server:
+## 📁 Folder Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+next-template/
+│
+├── app/
+│   └── [locale]/                    # Dynamic locale segment (ar / en)
+│       ├── layout.js                # Root layout with fonts & providers
+│       ├── page.js                  # Home page
+│       ├── about/
+│       │   └── page.js              # About us page
+│       ├── services/
+│       │   ├── page.js              # Services overview
+│       │   └── [slug]/
+│       │       └── page.js          # Individual service detail page
+│       ├── contact/
+│       │   └── page.js              # Contact page
+│       └── faqs/
+│           └── page.js              # FAQs hub
+│
+├── components/
+│   ├── layout/
+│   │   ├── Navbar.jsx               # Top navigation bar
+│   │   └── Footer.jsx               # Site-wide footer
+│   ├── common/
+│   │   └── LanguageSwitcher.jsx     # AR / EN toggle
+│   ├── animations/
+│   │   └── Reveal.jsx               # Scroll-triggered reveal wrapper
+│   └── ui/
+│       └── button.jsx               # Base button component (shadcn)
+│
+├── lib/
+│   ├── constants/
+│   │   └── constantData.js          # Site-wide static data & config
+│   └── api/
+│       └── api.js                   # API helper functions
+│
+├── messages/
+│   ├── ar.json                      # Arabic translations (next-intl)
+│   └── en.json                      # English translations (next-intl)
+│
+├── styles/
+│   └── globals.css                  # Global styles & Tailwind base
+│
+├── next.config.js                   # Next.js config (i18n, images, etc.)
+└── proxy.ts                         # Dev proxy configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Layer | Library | Version | Purpose |
+|---|---|---|---|
+| Framework | `next` | 16.1.6 | App router, SSR/SSG |
+| UI | `react` / `react-dom` | 19.2.3 | Core UI library |
+| i18n | `next-intl` | ^4.8.3 | Arabic/English routing & translations |
+| Styling | `tailwindcss` | ^4 | Utility-first CSS |
+| Styling | `tailwind-merge` | ^3.5.0 | Merge conflicting Tailwind classes |
+| Styling | `tw-animate-css` | ^1.4.0 | Tailwind animation utilities |
+| Components | `shadcn` | ^4.1.0 | Accessible component primitives |
+| Components | `radix-ui` | ^1.4.3 | Unstyled accessible UI |
+| Variants | `class-variance-authority` | ^0.7.1 | Component variant management |
+| Utils | `clsx` | ^2.1.1 | Conditional class names |
+| Icons | `lucide-react` | ^0.577.0 | Icon set |
+| Animation | `motion` | ^12.36.0 | Scroll & enter animations (Framer Motion) |
+| Slider / carousel | `swiper` | ^12.1.2 | Touch-enabled sliders |
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Install dependencies
+npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Run development server
+npm run dev
 
-## Deploy on Vercel
+# Build for production
+npm run build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Start production server
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
