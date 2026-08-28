@@ -1,0 +1,58 @@
+next-template__/
+│
+├── app/                              # Next.js App Router
+│   └── [locale]/                     # مسارات متعددة اللغات (ar / en)
+│       ├── layout.js                 # Layout رئيسي + RTL/LTR + next-intl
+│       └── page.js                   # الصفحة الرئيسية
+│
+├── components/                       # مكوّنات React
+│   ├── layout/
+│   │   ├── Navbar.jsx                # شريط التنقل
+│   │   └── Footer.jsx                # التذييل
+│   ├── ui/                           # مكوّنات shadcn/ui
+│   │   ├── button.jsx
+│   │   ├── Slider.jsx
+│   │   └── Spinner.jsx
+│   ├── common/
+│   │   └── Card.jsx                  # بطاقة قابلة لإعادة الاستخدام
+│   ├── animations/
+│   │   └── Reveal.jsx                # أنيميشن (motion)
+│   └── LanguageSwitcher.jsx          # تبديل اللغة
+│
+├── i18n/                             # إعدادات الترجمة (next-intl)
+│   ├── routing.js                    # اللغات المدعومة + default locale
+│   ├── navigation.js                 # روابط التنقل المترجمة
+│   └── request.js                    # تحميل ملفات الترجمة
+│
+├── messages/                         # نصوص الترجمة
+│   ├── en.json                       # الإنجليزية
+│   └── ar.json                       # العربية
+│
+├── lib/                              # دوال مساعدة وخدمات
+│   ├── api/
+│   │   └── api.js                    # طبقة API
+│   ├── constants/
+│   │   └── constantData.js           # ثوابت التطبيق
+│   ├── utils/
+│   │   └── helperFun.js              # دوال مساعدة
+│   └── utils.js                      # cn() و utilities عامة
+│
+├── styles/
+│   └── globals.css                   # Tailwind + أنماط عامة
+│
+├── docs/
+│   └── folder-structure.txt          # هذا الملف
+│
+├── .vscode/
+│   └── settings.json                 # إعدادات VS Code
+│
+├── proxy.ts                          # Middleware للغات (next-intl)
+├── next.config.mjs                   # إعدادات Next.js + next-intl plugin
+├── jsconfig.json                     # مسارات @/* aliases
+├── components.json                   # إعدادات shadcn/ui
+├── postcss.config.mjs                # PostCSS / Tailwind
+├── eslint.config.mjs                 # ESLint
+├── package.json                      # Dependencies & scripts
+├── package-lock.json
+├── .gitignore
+└── README.md
