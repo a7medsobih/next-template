@@ -1,9 +1,17 @@
 next-template__/
 │
 ├── app/                              # Next.js App Router
-│   └── [locale]/                     # مسارات متعددة اللغات (ar / en)
-│       ├── layout.js                 # Layout رئيسي + RTL/LTR + next-intl
-│       └── page.js                   # الصفحة الرئيسية
+│   ├── [locale]/                     # مسارات متعددة اللغات (ar / en)
+│   │   ├── layout.js                 # Layout رئيسي + RTL/LTR + SEO + next-intl
+│   │   └── page.js                   # الصفحة الرئيسية
+│   ├── error.js                      # Error boundary
+│   ├── loading.js                    # حالة التحميل
+│   ├── not-found.js                  # صفحة 404
+│   ├── robots.js                     # robots.txt
+│   └── sitemap.js                    # sitemap.xml
+│
+├── assets/                           # أصول المشروع (صور، شعارات)
+│   └── logo.png
 │
 ├── components/                       # مكوّنات React
 │   ├── layout/
@@ -17,6 +25,8 @@ next-template__/
 │   │   └── Card.jsx                  # بطاقة قابلة لإعادة الاستخدام
 │   ├── animations/
 │   │   └── Reveal.jsx                # أنيميشن (motion)
+│   ├── skeletons/                    # هياكل تحميل (placeholders)
+│   ├── EmptyState.jsx/               # حالة فارغة
 │   └── LanguageSwitcher.jsx          # تبديل اللغة
 │
 ├── i18n/                             # إعدادات الترجمة (next-intl)
@@ -24,18 +34,26 @@ next-template__/
 │   ├── navigation.js                 # روابط التنقل المترجمة
 │   └── request.js                    # تحميل ملفات الترجمة
 │
-├── messages/                         # نصوص الترجمة
+├── messages/                         # نصوص الترجمة + metadata
 │   ├── en.json                       # الإنجليزية
 │   └── ar.json                       # العربية
 │
 ├── lib/                              # دوال مساعدة وخدمات
 │   ├── api/
-│   │   └── api.js                    # طبقة API
+│   │   ├── client.js                 # عميل API
+│   │   └── endpoints.js              # مسارات الـ API
 │   ├── constants/
 │   │   └── constantData.js           # ثوابت التطبيق
 │   ├── utils/
 │   │   └── helperFun.js              # دوال مساعدة
+│   ├── validations/
+│   │   └── contact.schema.js         # مخطط التحقق (فورم التواصل)
+│   ├── site.js                       # إعدادات الموقع + URLs للـ SEO
 │   └── utils.js                      # cn() و utilities عامة
+│
+├── public/                           # ملفات عامة تُقدَّم كما هي
+│   ├── favicon.ico
+│   └── og-image.png                  # صورة Open Graph الافتراضية
 │
 ├── styles/
 │   └── globals.css                   # Tailwind + أنماط عامة
@@ -54,5 +72,6 @@ next-template__/
 ├── eslint.config.mjs                 # ESLint
 ├── package.json                      # Dependencies & scripts
 ├── package-lock.json
+├── .env.example                      # نموذج متغيرات البيئة
 ├── .gitignore
 └── README.md
