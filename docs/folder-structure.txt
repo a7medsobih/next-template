@@ -1,77 +1,75 @@
-next-template__/
+next-template/
 │
 ├── app/                              # Next.js App Router
-│   ├── [locale]/                     # مسارات متعددة اللغات (ar / en)
-│   │   ├── layout.js                 # Layout رئيسي + RTL/LTR + SEO + next-intl
-│   │   └── page.js                   # الصفحة الرئيسية
+│   ├── [locale]/                     # Localized routes (en / ar)
+│   │   ├── layout.js                 # Root layout, direction, and SEO metadata
+│   │   └── page.js                   # Home page
 │   ├── error.js                      # Error boundary
-│   ├── loading.js                    # حالة التحميل
-│   ├── not-found.js                  # صفحة 404
-│   ├── robots.js                     # robots.txt
-│   └── sitemap.js                    # sitemap.xml
+│   ├── loading.js                    # Loading state
+│   ├── not-found.js                  # 404 page
+│   ├── robots.js                     # robots.txt metadata
+│   └── sitemap.js                    # sitemap.xml metadata
 │
-├── assets/                           # أصول المشروع (صور، شعارات)
+├── assets/                           # Project assets
 │   └── logo.png
 │
-├── components/                       # مكوّنات React
+├── components/                       # Reusable React components
 │   ├── layout/
-│   │   ├── Navbar.jsx                # شريط التنقل
-│   │   └── Footer.jsx                # التذييل
-│   ├── ui/                           # مكوّنات shadcn/ui
+│   │   ├── Navbar.jsx                # Navigation placeholder
+│   │   └── Footer.jsx                # Footer placeholder
+│   ├── ui/                           # UI components
 │   │   ├── button.jsx
 │   │   ├── Slider.jsx
 │   │   └── Spinner.jsx
 │   ├── common/
-│   │   └── Card.jsx                  # بطاقة قابلة لإعادة الاستخدام
+│   │   └── Card.jsx                  # Reusable card placeholder
 │   ├── animations/
-│   │   └── Reveal.jsx                # أنيميشن (motion)
-│   ├── skeletons/                    # هياكل تحميل (placeholders)
-│   ├── EmptyState.jsx/               # حالة فارغة
-│   └── LanguageSwitcher.jsx          # تبديل اللغة
+│   │   └── Reveal.jsx                # Scroll reveal animation
+│   ├── skeletons/                    # Loading skeleton placeholders
+│   │   └── .gitkeep
+│   ├── EmptyState.jsx/               # Empty state placeholder
+│   └── LanguageSwitcher.jsx          # Language switcher
 │
-├── i18n/                             # إعدادات الترجمة (next-intl)
-│   ├── routing.js                    # اللغات المدعومة + default locale
-│   ├── navigation.js                 # روابط التنقل المترجمة
-│   └── request.js                    # تحميل ملفات الترجمة
+├── i18n/                             # next-intl configuration
+│   ├── routing.js                    # Supported and default locales
+│   ├── navigation.js                 # Locale-aware navigation helpers
+│   └── request.js                    # Translation message loading
 │
-├── messages/                         # نصوص الترجمة + metadata
-│   ├── en.json                       # الإنجليزية
-│   └── ar.json                       # العربية
+├── messages/                         # Translation messages and metadata
+│   ├── en.json                       # English
+│   └── ar.json                       # Arabic
 │
-├── lib/                              # دوال مساعدة وخدمات
+├── lib/                              # Utilities and service configuration
 │   ├── api/
-│   │   ├── client.js                 # عميل API
-│   │   └── endpoints.js              # مسارات الـ API
+│   │   ├── client.js                 # API client placeholder
+│   │   └── endpoints.js              # API endpoints placeholder
 │   ├── constants/
-│   │   └── constantData.js           # ثوابت التطبيق
+│   │   └── constantData.js           # Application constants
 │   ├── utils/
-│   │   └── helperFun.js              # دوال مساعدة
+│   │   └── helperFun.js              # Helper functions
 │   ├── validations/
-│   │   └── contact.schema.js         # مخطط التحقق (فورم التواصل)
-│   ├── site.js                       # إعدادات الموقع + URLs للـ SEO
-│   └── utils.js                      # cn() و utilities عامة
+│   │   └── contact.schema.js         # Contact validation placeholder
+│   ├── site.js                       # Site configuration and SEO URLs
+│   └── utils.js                      # Shared utilities, including cn()
 │
-├── public/                           # ملفات عامة تُقدَّم كما هي
+├── public/                           # Static public files
 │   ├── favicon.ico
-│   └── og-image.png                  # صورة Open Graph الافتراضية
+│   └── og-image.png                  # Default Open Graph image
 │
 ├── styles/
-│   └── globals.css                   # Tailwind + أنماط عامة
+│   └── globals.css                   # Tailwind and global styles
 │
 ├── docs/
-│   └── folder-structure.txt          # هذا الملف
+│   └── folder-structure.txt          # This file
 │
-├── .vscode/
-│   └── settings.json                 # إعدادات VS Code
-│
-├── proxy.ts                          # Middleware للغات (next-intl)
-├── next.config.mjs                   # إعدادات Next.js + next-intl plugin
-├── jsconfig.json                     # مسارات @/* aliases
-├── components.json                   # إعدادات shadcn/ui
-├── postcss.config.mjs                # PostCSS / Tailwind
-├── eslint.config.mjs                 # ESLint
-├── package.json                      # Dependencies & scripts
+├── proxy.ts                          # next-intl locale middleware
+├── next.config.mjs                   # Next.js and next-intl plugin config
+├── jsconfig.json                     # @/* path alias configuration
+├── components.json                   # UI component configuration
+├── postcss.config.mjs                # PostCSS and Tailwind configuration
+├── eslint.config.mjs                 # ESLint configuration
+├── package.json                      # Dependencies and scripts
 ├── package-lock.json
-├── .env.example                      # نموذج متغيرات البيئة
+├── .env.example                      # Environment variable template
 ├── .gitignore
 └── README.md

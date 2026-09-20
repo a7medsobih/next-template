@@ -1,91 +1,72 @@
 # Next Template
 
----
+A reusable starter template for **Next.js** projects. It provides a foundation for Arabic and English applications, including UI, localization, and SEO setup, while leaving the pages and content ready to extend.
 
-## 📁 Folder Structure
+> Current state: the home page displays a translated demo title (`Hello world!`) and a language switcher.
 
-```
-next-template/
-│
-├── app/
-│   └── [locale]/                    # Dynamic locale segment (ar / en)
-│       ├── layout.js                # Root layout with fonts & providers
-│       ├── page.js                  # Home page
-│       ├── about/
-│       │   └── page.js              # About us page
-│       ├── services/
-│       │   ├── page.js              # Services overview
-│       │   └── [slug]/
-│       │       └── page.js          # Individual service detail page
-│       ├── contact/
-│       │   └── page.js              # Contact page
-│       └── faqs/
-│           └── page.js              # FAQs hub
-│
-├── components/
-│   ├── layout/
-│   │   ├── Navbar.jsx               # Top navigation bar
-│   │   └── Footer.jsx               # Site-wide footer
-│   ├── common/
-│   │   └── LanguageSwitcher.jsx     # AR / EN toggle
-│   ├── animations/
-│   │   └── Reveal.jsx               # Scroll-triggered reveal wrapper
-│   └── ui/
-│       └── button.jsx               # Base button component (shadcn)
-│
-├── lib/
-│   ├── constants/
-│   │   └── constantData.js          # Site-wide static data & config
-│   └── api/
-│       └── api.js                   # API helper functions
-│
-├── messages/
-│   ├── ar.json                      # Arabic translations (next-intl)
-│   └── en.json                      # English translations (next-intl)
-│
-├── styles/
-│   └── globals.css                  # Global styles & Tailwind base
-│
-├── next.config.js                   # Next.js config (i18n, images, etc.)
-└── proxy.ts                         # Dev proxy configuration
+## Tech Stack
+
+- Next.js `16.1.6` with the App Router and React `19.2.3`.
+- `next-intl` for Arabic and English routing and translations.
+- Tailwind CSS `4` and `tw-animate-css` for styling and animation utilities.
+- shadcn- and Radix-compatible UI setup with `class-variance-authority`, `clsx`, and `tailwind-merge`.
+- `motion` for animations and `swiper` for sliders.
+- `lucide-react` for icons.
+
+## What the Template Provides
+
+- Locale routes for `en` and `ar`, with automatic LTR or RTL page direction.
+- Translation loading from `messages/en.json` and `messages/ar.json`.
+- A language switcher plus reusable button, slider, and spinner components.
+- Loading, error, and 404 states.
+- Metadata, Open Graph, `robots.txt`, and `sitemap.xml` setup.
+- Initial API, validation, and utility placeholders for future project features.
+
+## Project Structure
+
+```text
+app/              Next.js pages, loading/error states, and SEO files
+app/[locale]/     Locale-specific layout and home page
+components/       UI and animation components
+i18n/             Routing and localization configuration
+messages/         Arabic and English translation files
+lib/              Site config, utilities, and API setup
+styles/            Global Tailwind styles
+public/            Public assets
+proxy.ts           Middleware for locale routing
 ```
 
----
+## Run Locally
 
-## 🛠️ Tech Stack
-
-| Layer | Library | Version | Purpose |
-|---|---|---|---|
-| Framework | `next` | 16.1.6 | App router, SSR/SSG |
-| UI | `react` / `react-dom` | 19.2.3 | Core UI library |
-| i18n | `next-intl` | ^4.8.3 | Arabic/English routing & translations |
-| Styling | `tailwindcss` | ^4 | Utility-first CSS |
-| Styling | `tailwind-merge` | ^3.5.0 | Merge conflicting Tailwind classes |
-| Styling | `tw-animate-css` | ^1.4.0 | Tailwind animation utilities |
-| Components | `shadcn` | ^4.1.0 | Accessible component primitives |
-| Components | `radix-ui` | ^1.4.3 | Unstyled accessible UI |
-| Variants | `class-variance-authority` | ^0.7.1 | Component variant management |
-| Utils | `clsx` | ^2.1.1 | Conditional class names |
-| Icons | `lucide-react` | ^0.577.0 | Icon set |
-| Animation | `motion` | ^12.36.0 | Scroll & enter animations (Framer Motion) |
-| Slider / carousel | `swiper` | ^12.1.2 | Touch-enabled sliders |
-
----
-
-## 🚀 Getting Started
+The project requires Node.js and npm.
 
 ```bash
-# Install dependencies
 npm install
-
-# Run development server
 npm run dev
+```
 
-# Build for production
+Open `http://localhost:3000` after the development server starts. Use `/ar` to view the Arabic version.
+
+Other available commands:
+
+```bash
+npm run lint
 npm run build
-
-# Start production server
 npm start
 ```
 
----
+## Environment Variables
+
+Copy `.env.example` to `.env`:
+
+```bash
+cp .env.example .env
+```
+
+The variable currently used by the application is:
+
+```env
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
+
+It is used for site URLs and SEO metadata. If it is not set, the project defaults to `http://localhost:3000`. `.env.example` also includes `NEXT_PUBLIC_API_URL` as a future-ready variable, but it is not currently used in the code.
